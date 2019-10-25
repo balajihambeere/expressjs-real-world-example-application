@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+  .w3-light-grey.w3-hide-medium.w3-hide-large
+    .w3-margin.w3-large(style='padding-top: 50px') #{course.title}
+  .w3-container.w3-hide-medium.w3-hide-large
+    a.w3-button.w3-right(href="javascript:void(0)" id="openSideBar") 
+      i.fa.fa-bars.fa-lg
+      span(style="margin-left:10px;") contents
+  hr
+  header.w3-hide-small.w3-container.w3-light-grey.w3-center(style='padding:40px 16px') 
+    h1.w3-margin.w3-xxxlarge #{course.title}
+    p.w3-xlarge Author: #{course.author}
+
+  .w3-row.w3-container.w3-margin-top.w3-hide-small
+    .w3-quarter.w3-white
+      .w3-container
+        .w3-bar-block
+          each lesson in course.courseOutlines
+            a.w3-bar-item.w3-button.w3-padding.w3-light-green #{lesson.title}
+              each topic in lesson.topics
+                a.w3-bar-item.w3-button.w3-padding(href="/" + course.category.toLowerCase() + '/topic/' + course.id + '/'+ topic.slug) #{topic.title}
+    .w3-half
+      p !{course.objectives}
+    .w3-quarter
+      .w3-border.w3-padding-large.w3-padding-32.w3-center Advertisement
+  
+ 
+
+  nav.w3-sidebar.w3-bar-block.w3-large.w3-animate-left(id="mySidebar" style="z-index:3;width:100%; height: 100%;padding-bottom: 50px;display:none")
+    .w3-container
+      .w3-bar-block
+        each lesson in course.courseOutlines
+          a.w3-bar-item.w3-button.w3-padding.w3-light-green #{lesson.title}
+            each topic in lesson.topics
+              a.w3-bar-item.w3-button.w3-padding(href="/" + course.category.toLowerCase() + '/topic/' + course.id + '/'+ topic.slug) #{topic.title}
+  
+  .w3-container.w3-hide-medium.w3-hide-large
+    p !{course.objectives}
+  hr

@@ -1,0 +1,30 @@
+.w3-top
+  .w3-bar.w3-white.w3-padding.w3-card(style='letter-spacing:4px')
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-medium.w3-hide-large.w3-right(href="javascript:void(0)" id="navClickBar")
+      i.fa.fa-bars
+    a.w3-bar-item.w3-button(href='/') WISHTARA
+    .w3-hide-small
+      a.w3-bar-item.w3-button(href='/') Home
+      .w3-dropdown-hover
+        .w3-button Tutorials
+          .w3-dropdown-content.w3-card-4.w3-bar-block
+            each item in menuItems
+              a.w3-bar-item.w3-button(href='/'+item.category) #{item.category}
+      a.w3-bar-item.w3-button(href='/blog') Blog
+      a.w3-bar-item.w3-button(href='#home') Events
+      a.w3-bar-item.w3-button(href='#home') More
+
+.w3-bar-block.w3-white.w3-hide.w3-hide-large.w3-hide-medium.w3-top(id="navHeaderBar" style="margin-top:46px")
+  a.w3-bar-item.w3-button(href='/') Home
+  .w3-dropdown-hover
+    .w3-button Tutorials
+      .w3-dropdown-content
+        each item in menuItems
+          a.w3-bar-item.w3-button(href='/'+item.category) #{item.category}
+  a.w3-bar-item.w3-button(href='/blog') Blog
+  a.w3-bar-item.w3-button(href='#home') Events
+  a.w3-bar-item.w3-button(href='#home') More
+
+
+
+

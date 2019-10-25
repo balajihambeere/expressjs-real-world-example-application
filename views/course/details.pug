@@ -1,0 +1,51 @@
+extends ../layout
+
+block content
+  .w3-light-grey.w3-hide-medium.w3-hide-large
+    .w3-margin.w3-large(style='padding-top: 50px') #{course.title}
+  header.w3-hide-small.w3-container.w3-light-grey.w3-center(style='padding:40px 16px') 
+    h1.w3-margin.w3-xxxlarge #{course.title}
+    p.w3-xlarge Author :  #{course.author}
+  .w3-container
+    .w3-row.w3-padding-32
+      .w3-col.m3
+        .w3-border.w3-padding-large.w3-padding-32.w3-center Advertisement
+      .w3-col.m5.w3-container
+        img.w3-image(src="/images/course-title.jpg" alt=""+course.title width="500" )
+      .w3-col.m4
+        .w3-ul
+          .w3-bar
+            i.fa.fa-user.w3-bar-item(style='font-size:25px;color:red')
+            .w3-bar-item
+              span.w3-large Author
+            .w3-bar-item.w3-right
+              span.w3-large #{course.author}
+          .w3-bar
+            i.fa.fa-user.w3-bar-item(style='font-size:25px;color:red')
+            .w3-bar-item
+              span.w3-large Level
+            .w3-bar-item.w3-right
+              span.w3-large #{course.level}
+          .w3-bar
+            i.fa.fa-user.w3-bar-item(style='font-size:25px;color:red')
+            .w3-bar-item
+              span.w3-large Category
+            .w3-bar-item.w3-right
+              span.w3-large #{course.category}
+        a.w3-button.w3-black.w3-padding-large.w3-large.w3-margin-top(href="/" + course.category.toLowerCase() + '/' + course.id + '/'+ course.slug) Get Started
+    .w3-row.w3-padding-32
+      .w3-col.m8.w3-container
+        h3 What will I learn?
+          hr
+          p !{course.objectives}
+        h3 COURSE OUTLINE
+          hr
+        .w3-bar-block.w3-card
+          each lesson in course.courseOutlines
+            a.w3-bar-item.w3-padding.w3-light-grey #{lesson.title}
+              each topic in lesson.topics
+                a.w3-bar-item.w3-padding #{topic.title}
+        hr
+        a.w3-button.w3-black.w3-padding-large.w3-large.w3-margin-top(href="/" + course.category.toLowerCase() + '/' + course.id + '/'+ course.slug) Get Started
+      .w3-col.m4
+        .w3-border.w3-padding-large.w3-padding-32.w3-center Advertisement

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  header.w3-container.w3-light-grey.w3-center(style='padding:40px 16px') 
+    h1.w3-margin.w3-xxxlarge.w3-padding-64 MAKE IT AS SIMPLE AS POSSIBLE, BUT NOT SIMPLER
+    p.w3-xlarge Albert Einstein   
+  .w3-container.w3-center(style='padding:40px 16px')
+    h1.w3-margin.w3-xxxlarge Regular Tutorials
+    p.w3-xlarge Author: Balaji Hambeere
+  .w3-container(style='padding-left:40px; padding-right:40px')
+    .w3-row-padding.w3-padding-16
+        each course in courses
+          .w3-third.w3-margin-bottom
+            img(src="/images/course-title.jpg" alt=''+course.title style="width:100%")
+            .w3-white
+              h4 #{course.title}
+              div(style='margin-bottom:5px')
+                span Category : 
+                span
+                a(href="#" style="margin-bottom:5px")  #{course.category}
+              a.w3-button.w3-block.w3-black.w3-margin-bottom(href="/" + course.category.toLowerCase() + '/' + course.slug) View
+  include partials/contact 
+    

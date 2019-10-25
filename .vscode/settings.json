@@ -1,0 +1,7 @@
+{
+    "appService.deploySubpath": "",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/b3c65fe1-86f9-4d88-9db5-bfe1d2f5a7d3/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/wishtara"
+}
